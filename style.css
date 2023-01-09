@@ -1,13 +1,12 @@
-.nav {
-    align-items: left;
-
-}
-
-.container-fluid {
-    background-color: rgb(176, 151, 235);
-}
-
-.cabecera {
-    height: 40px;
+.imagen_inicio{
+    margin-left: 10px;
     width: 40px;
+    height: 40px;
+}
+
+
+.title{
+    margin-top: -42px;
+    margin-left: 60px;
+    color: white;
 }
