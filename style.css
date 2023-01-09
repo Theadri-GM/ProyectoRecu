@@ -1,0 +1,14 @@
+.nav {
+    align-items: left;
+
+}
+
+.container-fluid {
+    background-color: rgb(176, 151, 235);
+}
+
+.cabecera {
+    height: 40px;
+    width: 40px;
+    
+}
