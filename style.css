@@ -1,12 +1,18 @@
 .imagen_inicio{
+    margin-top: 10px;
     margin-left: 10px;
     width: 40px;
     height: 40px;
 }
 
-
 .title{
     margin-top: -42px;
     margin-left: 60px;
     color: white;
+}
+
+.botones{
+    margin-left: 1632px;
+    margin-top: -40px;
+    margin-bottom: 24px;
 }
