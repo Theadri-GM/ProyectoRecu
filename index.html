@@ -24,7 +24,7 @@
 
             <div class="barra_busqueda">
                 <div class="container-fluid">
-                    <form class="d-flex" role="search">
+                    <form class="d-flex" role="search" onsubmit="busquedaPersonajes(event)">
                       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                       <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
@@ -40,6 +40,18 @@
         </div>
 
     </nav>
+
+    <main>
+
+        <div class="container">
+
+            <img src="https://rickandmortyapi.com/api/character/avatar/784.jpeg" alt="Personaje"/>
+            <h2> Personaje </h2>
+            <span> Descripcion </span>
+
+        </div>
+
+    </main>
 
 </body>
 <script src="peticiones.js"></script>
