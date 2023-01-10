@@ -1,18 +1,24 @@
 .imagen_inicio{
-    margin-top: 10px;
+    margin-top: 15px;
     margin-left: 10px;
     width: 40px;
     height: 40px;
 }
 
 .title{
-    margin-top: -42px;
+    margin-top: -40px;
     margin-left: 60px;
     color: white;
 }
 
 .botones{
-    margin-left: 1632px;
-    margin-top: -40px;
+    margin-left: 1490px;
+    margin-top: -48px;
     margin-bottom: 24px;
+}
+
+.barra_busqueda{
+    margin-left: 390px;
+    width: 1000px;
+    margin-top: -48px;
 }
