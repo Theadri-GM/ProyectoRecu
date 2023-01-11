@@ -5,6 +5,15 @@
 
 const aplicacion = document.querySelector('.container')
 
+const busquedaPersonajes = event => {
+    event.preventDefault();
+    const { valor } = event.target.personaje;
+    fetch (`https://rickandmortyapi.com/api/character/?name=${valor.toString()}`)
+        .then(response => response.json())
+        .then(data => crearPersonaje(data))
+
+}
+
 fetch('https://rickandmortyapi.com/api/character')
     .then(response => response.json())
     .then(data => {
@@ -40,5 +49,5 @@ function crearPersonaje(personaje){
 }
 
 function buscarPersonajes(event){
-    
+
 }
