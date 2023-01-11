@@ -23,19 +23,21 @@
     margin-top: -48px;
 }
 
-main{
+.container{
     margin-top: 10px;
-    margin-left: 10px;
-    display: grid;
-    grid-template-columns: 1fr, 1fr, 1fr;
-    gap: 10px;
-}
-
-.image-container{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.image-container img{
-    width: 100%;
+.personajes{
+    margin-left: 10px;
 }
 
+script{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
