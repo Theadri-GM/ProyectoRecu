@@ -3,26 +3,31 @@
     Primero, voy a comprobar que funciona y que me devuelve los characters que quiero por consola. Para ello:
 */
 
-const aplicacion = document.querySelector('.container')
+const input = document.querySelector("input");
+const aplicacion = document.querySelector('.container');
+const button = document.querySelector("button");
 
-const busquedaPersonajes = event => {
-    event.preventDefault();
-    const { valor } = event.target.personaje;
-    fetch (`https://rickandmortyapi.com/api/character/?name=${valor.toString()}`)
-        .then(response => response.json())
-        .then(data => crearPersonaje(data))
+button.addEventListener("click", (e) => {
+    e.preventDefault();
+    busquedaPersonajes(input.value);
 
+})
+
+function busquedaPersonajes(personaje){
+    fetch(`https://rickandmortyapi.com/api/character/?name=${personaje}`)
+    .then(response => response.json())
+    .then(data => {data.results.forEach(personaje => {
+        crearPersonaje(personaje);
+    });
+});
 }
 
-fetch('https://rickandmortyapi.com/api/character')
+fetch(`https://rickandmortyapi.com/api/character`)
     .then(response => response.json())
-    .then(data => {
-        data.results.forEach(personaje => {
-            crearPersonaje(personaje);
-        });
-    })
-
-
+    .then(data => {data.results.forEach(personaje => {
+        crearPersonaje(personaje);
+    });
+});
 
 function crearPersonaje(personaje){
     const contenido = document.createElement('div');
@@ -46,8 +51,4 @@ function crearPersonaje(personaje){
     contenido.appendChild(nombre);
 
     aplicacion.appendChild(contenido);
-}
-
-function buscarPersonajes(event){
-
 }
