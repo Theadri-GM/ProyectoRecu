@@ -10,6 +10,7 @@ const button = document.querySelector("button");
 button.addEventListener("click", (e) => {
     e.preventDefault();
     busquedaPersonajes(input.value);
+    
 
 })
 
@@ -22,12 +23,6 @@ function busquedaPersonajes(personaje){
 });
 }
 
-fetch(`https://rickandmortyapi.com/api/character`)
-    .then(response => response.json())
-    .then(data => {data.results.forEach(personaje => {
-        crearPersonaje(personaje);
-    });
-});
 
 function crearPersonaje(personaje){
     const contenido = document.createElement('div');
@@ -51,4 +46,12 @@ function crearPersonaje(personaje){
     contenido.appendChild(nombre);
 
     aplicacion.appendChild(contenido);
+}
+
+function borrar(){
+    var borrar = document.getElementsByClassName("personajes");
+
+    while(borrar.firstChild){
+        borrar.removeChild(borrar.firstChild);
+    }
 }
