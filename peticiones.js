@@ -7,10 +7,16 @@ const input = document.querySelector("input");
 const aplicacion = document.querySelector('.container');
 const button = document.querySelector("button");
 
+let historial = [];
+let contador = -1;
+
 button.addEventListener("click", (e) => {
     e.preventDefault();
     busquedaPersonajes(input.value);
-    
+    contador++;
+    historial[contador] = "Busqueda " + contador + ": " + input.value;
+    localStorage.setItem("nombre", JSON.stringify(historial));
+    console.log(historial[contador]);
 
 })
 
@@ -22,7 +28,6 @@ function busquedaPersonajes(personaje){
     });
 });
 }
-
 
 function crearPersonaje(personaje){
     const contenido = document.createElement('div');
@@ -48,10 +53,26 @@ function crearPersonaje(personaje){
     aplicacion.appendChild(contenido);
 }
 
-function borrar(){
-    var borrar = document.getElementsByClassName("personajes");
+//Boton guardar historial.
+let download = (filename, text) => {
+    let element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+  
+    element.style.display = 'none';
+    document.body.appendChild(element);
+  
+    element.click();
+  
+    document.body.removeChild(element);
+}
 
-    while(borrar.firstChild){
-        borrar.removeChild(borrar.firstChild);
-    }
+let descargar = document.getElementById('descargar').onclick = function(){
+    let busqueda = "Búsquedas de personajes.txt";
+    download(busqueda, historial);
+}
+
+// Borrar historial.
+let borrar = document.getElementById('borrarHistorial').onclick = function(){
+    historial = [];
 }
